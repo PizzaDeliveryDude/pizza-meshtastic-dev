@@ -1,15 +1,14 @@
 #!/bin/bash
 
 #setup
-#source ~/src/venv/bin/activate
-LOCATION="KNYC"
-TIME=$(date)
-RAW_WEATHER=$(weather $LOCATION)
+python -m venv ~/src/venv && source ~/src/venv/bin/activate 
+LOCATION="KBED"
+weather -v $LOCATION > temp_weather.txt
 
 #get weather
-WTEMP=$(weather $LOCATION | grep Temp)
-
+WTEMP=$(cat temp_weather.txt | grep Temp)
+WDEW=$(cat temp_weather.txt | grep Dew)
 #output weather
-OUTPUT="Conditions at $LOCATION:$WTEMP"
+OUTPUT="$LOCATION Conditions $WTEMP $WDEW"
 echo "$OUTPUT"
 meshtastic --ch-index 0 --sendtext "$OUTPUT"
