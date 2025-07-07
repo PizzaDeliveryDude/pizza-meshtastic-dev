@@ -13,7 +13,3 @@ pip install -U pip meshtastic
 meshtastic --export-config > PizzaDeliveryDude_config.yaml
 
 meshtastic --nodes › PizzaDeliveryDude_nodelist.yaml
-
-cat PizzaDeliveryDude_config.yaml
-
-cat PizzaDeliveryDude_nodelist.yaml
