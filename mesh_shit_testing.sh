@@ -2,7 +2,7 @@
 
 #setup
 python -m venv ~/src/venv && source ~/src/venv/bin/activate 
-LOCATION="KBED"
+LOCATION="KNYC"
 weather -v $LOCATION > temp_weather.txt
 
 #get weather
